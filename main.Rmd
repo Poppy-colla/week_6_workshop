@@ -1,0 +1,43 @@
+---
+title: "main.rmd"
+author: "Poppy Stanton"
+date: "17/11/2020"
+output: bookdown:: html_document: default
+        bookdown:: pdf_document: default
+        bookdown:: word_document: default 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE,
+                      fig.retina = 3)
+```
+
+```{r package_loading}
+library(tidyverse)
+```
+
+# Intrduction
+Data on male and female chaffinches is analyzed  
+
+
+# Methods
+Packages from the Tidyverse are used in the formatting and analysis of chaff data 
+
+
+# Results
+
+
+
+# Discussion 
+
+
+
+
+
+
+
+
+
+
