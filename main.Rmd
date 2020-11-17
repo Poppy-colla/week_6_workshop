@@ -25,6 +25,18 @@ Data on male and female chaffinches is analyzed
 # Methods
 Packages from the Tidyverse are used in the formatting and analysis of chaff data 
 
+### Importing and tidying the data
+
+```{r data_tidying}
+
+chaff <- read.table("data_raw/chaff.txt", header = TRUE)
+
+chaff2 <- chaff %>%
+  pivot_longer(names_to = "Sex",
+               values_to = "Mass",
+               cols = everything())
+
+```
 
 # Results
 
