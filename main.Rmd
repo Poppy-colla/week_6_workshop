@@ -38,6 +38,32 @@ chaff2 <- chaff %>%
 
 ```
 
+### Creating a function to calculate SS(x)
+
+```{r function}
+sum_sq <- function(df, measure){
+  df %>% summarise_(ss = sum(({{measure}} - mean({{measure}}))^2))
+}
+sum_sq(chaff2, chaff2$Mass)
+```
+
+
+Now including sex as a variable in the function 
+
+```{r function}
+sum_sq <- function(df, measure, group){
+  df %>% group_by({{ group}}) %>%
+    summarise(ss = sum(({{measure}} - mean({{measure}}))^2))
+}
+
+```
+
+
+
+
+
+
+
 # Results
 
 
