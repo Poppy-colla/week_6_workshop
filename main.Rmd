@@ -1,8 +1,9 @@
 ---
-title: "main.rmd"
+title: "Analysis of Chaffinch Mass and Sex"
 author: "Poppy Stanton"
 date: "17/11/2020"
 output: html_document
+bibliography: references.bib
         
 ---
 
@@ -19,7 +20,10 @@ library(tidyverse)
 
 # Introduction
 Data on male and female chaffinches is analyzed  
+We can add references with in text citations as shown below with full reference shown at bottom of output
 
+Data on blackbirds foraging behavior is available [@Post2006-gh]
+There is a relation between the Common Cuckoo and the Chaffinch as discussed by Tyller [-@Tyller2018-ag]
 
 # Methods
 Packages from the Tidyverse are used in the formatting and analysis of chaff data 
@@ -98,7 +102,7 @@ data_summary(chaff2, Mass, Sex)
 Task 2 in separate script - *MSC.rmd*
 
 
-
+# References
 
 
 
