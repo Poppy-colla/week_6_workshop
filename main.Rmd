@@ -2,23 +2,22 @@
 title: "main.rmd"
 author: "Poppy Stanton"
 date: "17/11/2020"
-output: bookdown:: html_document: default
-        bookdown:: pdf_document: default
-        bookdown:: word_document: default 
+output: html_document
+        
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE,
+knitr::opts_chunk$set(echo = TRUE,
                       warning = FALSE,
                       message = FALSE,
                       fig.retina = 3)
 ```
 
-```{r package_loading}
+```{r package_loading, echo = FALSE}
 library(tidyverse)
 ```
 
-# Intrduction
+# Introduction
 Data on male and female chaffinches is analyzed  
 
 
@@ -50,7 +49,7 @@ sum_sq(chaff2, chaff2$Mass)
 
 Now including sex as a variable in the function 
 
-```{r function}
+```{r function_2}
 sum_sq <- function(df, measure, group){
   df %>% group_by({{ group}}) %>%
     summarise(ss = sum(({{measure}} - mean({{measure}}))^2))
@@ -73,7 +72,7 @@ chaff2_summary
 
 Creating a summary function for the above 
 
-```{r function}
+```{r function_3}
 data_summary <- function(df, measure, group){
   df %>% 
     group_by({{ group }}) %>% summarise(mean = mean({{ measure }}),
@@ -88,7 +87,7 @@ data_summary(chaff2, Mass, Sex)
 
 # Results
 
-```{r summary, echo = TRUE}
+```{r summary_2}
 data_summary(chaff2, Mass, Sex)
 
 
@@ -96,8 +95,7 @@ data_summary(chaff2, Mass, Sex)
 
 # Discussion 
 
-
-
+Task 2 in separate script - *MSC.rmd*
 
 
 
