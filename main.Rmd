@@ -55,18 +55,44 @@ sum_sq <- function(df, measure, group){
   df %>% group_by({{ group}}) %>%
     summarise(ss = sum(({{measure}} - mean({{measure}}))^2))
 }
-
+sum_sq(chaff2, Mass, Sex)
 ```
 
+Adding a code chunk for summarizing the masses by sex - include the mean, standard deviation, sample size and the standard error
 
+```{r summary}
+chaff2_summary <- chaff2 %>%
+  group_by(Sex) %>%
+  summarise(mean_mass = mean(Mass),
+            n = length(Mass),
+            sd_mass = sd(Mass),
+            se_mass = sd_mass/sqrt(n))
+  
+chaff2_summary
+```
 
+Creating a summary function for the above 
 
+```{r function}
+data_summary <- function(df, measure, group){
+  df %>% 
+    group_by({{ group }}) %>% summarise(mean = mean({{ measure }}),
+            n = length({{ measure }}),
+            sd = sd({{ measure }}),
+            se = sd/sqrt(n))
+}
+data_summary(chaff2, Mass, Sex)
+```
 
 
 
 # Results
 
+```{r summary, echo = TRUE}
+data_summary(chaff2, Mass, Sex)
 
+
+```
 
 # Discussion 
 
